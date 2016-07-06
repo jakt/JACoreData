@@ -16,7 +16,7 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate AFNetworking into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate JACoreData into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 git "git@github.com:jakt/JACoreData.git" ~> 1.0
