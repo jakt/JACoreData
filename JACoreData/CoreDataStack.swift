@@ -10,7 +10,7 @@ import CoreData
 import UIKit
 
 
-public func createMainContext(modelStoreName:String, bundles:[NSBundle]) -> NSManagedObjectContext {
+public func createMainContext(modelStoreName:String, bundles:[NSBundle]?) -> NSManagedObjectContext {
     let storeURL = NSURL.documentsURL.URLByAppendingPathComponent(modelStoreName)
     
     guard let model = NSManagedObjectModel.mergedModelFromBundles(bundles) else {fatalError("model not found")}
