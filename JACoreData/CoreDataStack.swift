@@ -38,7 +38,7 @@ extension NSURL {
 
 extension NSManagedObjectContext {
     public func insertObject<A:ManagedObject where A:ManagedObjectType>() -> A {
-        guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A else {fatalError("wrong object type")}
+        guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A else {fatalError("wrong object type - Type should be \(A.entityName))")}
         return obj
     }
     
