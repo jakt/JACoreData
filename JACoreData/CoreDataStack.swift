@@ -24,6 +24,20 @@ public func createMainContext(modelStoreName:String, bundles:[NSBundle]?) -> NSM
     return context
 }
 
+public func createInMemoryMainContext(modelStoreName:String, bundles:[NSBundle]?) -> NSManagedObjectContext {
+    let storeURL = NSURL.documentsURL.URLByAppendingPathComponent(modelStoreName)
+    
+    guard let model = NSManagedObjectModel.mergedModelFromBundles(bundles) else {fatalError("model not found")}
+    let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
+    let options = [NSInferMappingModelAutomaticallyOption:true,
+                   NSMigratePersistentStoresAutomaticallyOption: true]
+    
+    try! psc.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: storeURL, options: options)
+    let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    context.persistentStoreCoordinator = psc
+    return context
+}
+
 extension NSURL {
     
     static func temporaryURL() -> NSURL {
