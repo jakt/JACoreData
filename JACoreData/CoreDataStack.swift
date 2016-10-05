@@ -17,9 +17,22 @@ public func createMainContext(modelStoreName:String, bundles:[NSBundle]?) -> NSM
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     let options = [NSInferMappingModelAutomaticallyOption:true,
                    NSMigratePersistentStoresAutomaticallyOption: true]
-    
     try! psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
     let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    context.persistentStoreCoordinator = psc
+    return context
+}
+
+public func createBackgroundContext(modelStoreName:String, bundles:[NSBundle]?) -> NSManagedObjectContext {
+    let storeURL = NSURL.documentsURL.URLByAppendingPathComponent(modelStoreName)
+    
+    guard let model = NSManagedObjectModel.mergedModelFromBundles(bundles) else {fatalError("model not found")}
+    let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
+    let options = [NSInferMappingModelAutomaticallyOption:true,
+                   NSMigratePersistentStoresAutomaticallyOption: true]
+    
+    try! psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
+    let context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
     context.persistentStoreCoordinator = psc
     return context
 }
