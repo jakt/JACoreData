@@ -10,62 +10,62 @@ import CoreData
 import UIKit
 
 
-public func createMainContext(modelStoreName:String, bundles:[NSBundle]?) -> NSManagedObjectContext {
-    let storeURL = NSURL.documentsURL.URLByAppendingPathComponent(modelStoreName)
+public func createMainContext(modelStoreName:String, bundles:[Bundle]?) -> NSManagedObjectContext {
+    let storeURL = URL.documentsURL.appendingPathComponent(modelStoreName)
     
-    guard let model = NSManagedObjectModel.mergedModelFromBundles(bundles) else {fatalError("model not found")}
+    guard let model = NSManagedObjectModel.mergedModel(from: bundles) else {fatalError("model not found")}
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     let options = [NSInferMappingModelAutomaticallyOption:true,
                    NSMigratePersistentStoresAutomaticallyOption: true]
-    try! psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
-    let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options)
+    let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     context.persistentStoreCoordinator = psc
     return context
 }
 
-public func createBackgroundContext(modelStoreName:String, bundles:[NSBundle]?) -> NSManagedObjectContext {
-    let storeURL = NSURL.documentsURL.URLByAppendingPathComponent(modelStoreName)
+public func createBackgroundContext(modelStoreName:String, bundles:[Bundle]?) -> NSManagedObjectContext {
+    let storeURL = URL.documentsURL.appendingPathComponent(modelStoreName)
     
-    guard let model = NSManagedObjectModel.mergedModelFromBundles(bundles) else {fatalError("model not found")}
+    guard let model = NSManagedObjectModel.mergedModel(from: bundles) else {fatalError("model not found")}
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     let options = [NSInferMappingModelAutomaticallyOption:true,
                    NSMigratePersistentStoresAutomaticallyOption: true]
     
-    try! psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
-    let context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+    try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options)
+    let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     context.persistentStoreCoordinator = psc
     return context
 }
 
-public func createInMemoryMainContext(modelStoreName:String, bundles:[NSBundle]?) -> NSManagedObjectContext {
-    let storeURL = NSURL.documentsURL.URLByAppendingPathComponent(modelStoreName)
+public func createInMemoryMainContext(modelStoreName:String, bundles:[Bundle]?) -> NSManagedObjectContext {
+    let storeURL = URL.documentsURL.appendingPathComponent(modelStoreName)
     
-    guard let model = NSManagedObjectModel.mergedModelFromBundles(bundles) else {fatalError("model not found")}
+    guard let model = NSManagedObjectModel.mergedModel(from: bundles) else {fatalError("model not found")}
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     let options = [NSInferMappingModelAutomaticallyOption:true,
                    NSMigratePersistentStoresAutomaticallyOption: true]
     
-    try! psc.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: storeURL, options: options)
-    let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    try! psc.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: storeURL, options: options)
+    let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     context.persistentStoreCoordinator = psc
     return context
 }
 
-extension NSURL {
+extension URL {
     
-    static func temporaryURL() -> NSURL {
-        return try! NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.CachesDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true).URLByAppendingPathComponent(NSUUID().UUIDString)!
+    static func temporaryURL() -> URL {
+        return try! FileManager.default.url(for: FileManager.SearchPathDirectory.cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(UUID().uuidString)
     }
     
-    static var documentsURL: NSURL {
-        return try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+    static var documentsURL: URL {
+        return try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
     }
     
 }
 
 extension NSManagedObjectContext {
-    public func insertObject<A:ManagedObject where A:ManagedObjectType>() -> A {
-        guard let obj = NSEntityDescription.insertNewObjectForEntityForName(A.entityName, inManagedObjectContext: self) as? A else {fatalError("wrong object type - Type should be \(A.entityName))")}
+    public func insertObject<A:ManagedObject>() -> A where A:ManagedObjectType {
+        guard let obj = NSEntityDescription.insertNewObject(forEntityName: A.entityName, into: self) as? A else {fatalError("wrong object type - Type should be \(A.entityName))")}
         return obj
     }
     
@@ -79,8 +79,8 @@ extension NSManagedObjectContext {
         }
     }
     
-    public func performChanges(block:()->()){
-        performBlock { 
+    public func performChanges(block:@escaping ()->()){
+        perform { 
             block()
             self.saveOrRollback()
         }
