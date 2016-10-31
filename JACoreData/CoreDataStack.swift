@@ -37,6 +37,7 @@ public func createBackgroundContext(modelStoreName:String, bundles:[Bundle]?) ->
     return context
 }
 
+// Used for testing, data will not persist
 public func createInMemoryMainContext(modelStoreName:String, bundles:[Bundle]?) -> NSManagedObjectContext {
     let storeURL = URL.documentsURL.appendingPathComponent(modelStoreName)
     
@@ -82,7 +83,11 @@ extension NSManagedObjectContext {
     public func performChanges(block:@escaping ()->()){
         perform { 
             block()
-            self.saveOrRollback()
+            if self.saveOrRollback() {
+                print("Success performing core data changes")
+            } else {
+                print("Error performing core data changes")
+            }
         }
     }
 }
