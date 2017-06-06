@@ -11,7 +11,25 @@
 		457406CE1D2C114D00E839A3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CB1D2C114D00E839A3 /* CoreDataStack.swift */; };
 		457406CF1D2C114D00E839A3 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CC1D2C114D00E839A3 /* ManagedObject.swift */; };
 		457406D01D2C114D00E839A3 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CD1D2C114D00E839A3 /* ManagedObjectContextSettable.swift */; };
+		746DAF1E1EE7714300AC5476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF1D1EE7714300AC5476 /* AppDelegate.swift */; };
+		746DAF201EE7714300AC5476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF1F1EE7714300AC5476 /* ViewController.swift */; };
+		746DAF231EE7714300AC5476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746DAF211EE7714300AC5476 /* Main.storyboard */; };
+		746DAF261EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF241EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld */; };
+		746DAF281EE7714300AC5476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 746DAF271EE7714300AC5476 /* Assets.xcassets */; };
+		746DAF2B1EE7714300AC5476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746DAF291EE7714300AC5476 /* LaunchScreen.storyboard */; };
+		746DAF451EE7717700AC5476 /* JACoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF441EE7717700AC5476 /* JACoreDataTests.swift */; };
+		746DAF471EE7717700AC5476 /* JACoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457406C01D2C113E00E839A3 /* JACoreData.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		746DAF481EE7717700AC5476 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 457406B71D2C113E00E839A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 457406BF1D2C113E00E839A3;
+			remoteInfo = JACoreData;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		457406C01D2C113E00E839A3 /* JACoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JACoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +38,17 @@
 		457406CB1D2C114D00E839A3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		457406CC1D2C114D00E839A3 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
 		457406CD1D2C114D00E839A3 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
+		746DAF1B1EE7714200AC5476 /* JACoreDataSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JACoreDataSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		746DAF1D1EE7714300AC5476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		746DAF1F1EE7714300AC5476 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		746DAF221EE7714300AC5476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		746DAF251EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JACoreDataSampleApp.xcdatamodel; sourceTree = "<group>"; };
+		746DAF271EE7714300AC5476 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		746DAF2A1EE7714300AC5476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		746DAF2C1EE7714300AC5476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		746DAF421EE7717700AC5476 /* JACoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JACoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		746DAF441EE7717700AC5476 /* JACoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JACoreDataTests.swift; sourceTree = "<group>"; };
+		746DAF461EE7717700AC5476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +59,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		746DAF181EE7714200AC5476 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		746DAF3F1EE7717700AC5476 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				746DAF471EE7717700AC5476 /* JACoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				457406C21D2C113E00E839A3 /* JACoreData */,
+				746DAF1C1EE7714300AC5476 /* JACoreDataSampleApp */,
+				746DAF431EE7717700AC5476 /* JACoreDataTests */,
 				457406C11D2C113E00E839A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				457406C01D2C113E00E839A3 /* JACoreData.framework */,
+				746DAF1B1EE7714200AC5476 /* JACoreDataSampleApp.app */,
+				746DAF421EE7717700AC5476 /* JACoreDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +107,29 @@
 				457406CD1D2C114D00E839A3 /* ManagedObjectContextSettable.swift */,
 			);
 			path = JACoreData;
+			sourceTree = "<group>";
+		};
+		746DAF1C1EE7714300AC5476 /* JACoreDataSampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				746DAF1D1EE7714300AC5476 /* AppDelegate.swift */,
+				746DAF1F1EE7714300AC5476 /* ViewController.swift */,
+				746DAF211EE7714300AC5476 /* Main.storyboard */,
+				746DAF271EE7714300AC5476 /* Assets.xcassets */,
+				746DAF291EE7714300AC5476 /* LaunchScreen.storyboard */,
+				746DAF2C1EE7714300AC5476 /* Info.plist */,
+				746DAF241EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld */,
+			);
+			path = JACoreDataSampleApp;
+			sourceTree = "<group>";
+		};
+		746DAF431EE7717700AC5476 /* JACoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				746DAF441EE7717700AC5476 /* JACoreDataTests.swift */,
+				746DAF461EE7717700AC5476 /* Info.plist */,
+			);
+			path = JACoreDataTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,18 +164,62 @@
 			productReference = 457406C01D2C113E00E839A3 /* JACoreData.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		746DAF1A1EE7714200AC5476 /* JACoreDataSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 746DAF3C1EE7714300AC5476 /* Build configuration list for PBXNativeTarget "JACoreDataSampleApp" */;
+			buildPhases = (
+				746DAF171EE7714200AC5476 /* Sources */,
+				746DAF181EE7714200AC5476 /* Frameworks */,
+				746DAF191EE7714200AC5476 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JACoreDataSampleApp;
+			productName = JACoreDataSampleApp;
+			productReference = 746DAF1B1EE7714200AC5476 /* JACoreDataSampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		746DAF411EE7717700AC5476 /* JACoreDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 746DAF4A1EE7717700AC5476 /* Build configuration list for PBXNativeTarget "JACoreDataTests" */;
+			buildPhases = (
+				746DAF3E1EE7717700AC5476 /* Sources */,
+				746DAF3F1EE7717700AC5476 /* Frameworks */,
+				746DAF401EE7717700AC5476 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				746DAF491EE7717700AC5476 /* PBXTargetDependency */,
+			);
+			name = JACoreDataTests;
+			productName = JACoreDataTests;
+			productReference = 746DAF421EE7717700AC5476 /* JACoreDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		457406B71D2C113E00E839A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = JAKT;
 				TargetAttributes = {
 					457406BF1D2C113E00E839A3 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
+					};
+					746DAF1A1EE7714200AC5476 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					746DAF411EE7717700AC5476 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -114,6 +229,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 457406B61D2C113E00E839A3;
 			productRefGroup = 457406C11D2C113E00E839A3 /* Products */;
@@ -121,12 +237,31 @@
 			projectRoot = "";
 			targets = (
 				457406BF1D2C113E00E839A3 /* JACoreData */,
+				746DAF1A1EE7714200AC5476 /* JACoreDataSampleApp */,
+				746DAF411EE7717700AC5476 /* JACoreDataTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		457406BE1D2C113E00E839A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		746DAF191EE7714200AC5476 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				746DAF2B1EE7714300AC5476 /* LaunchScreen.storyboard in Resources */,
+				746DAF281EE7714300AC5476 /* Assets.xcassets in Resources */,
+				746DAF231EE7714300AC5476 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		746DAF401EE7717700AC5476 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -146,7 +281,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		746DAF171EE7714200AC5476 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				746DAF201EE7714300AC5476 /* ViewController.swift in Sources */,
+				746DAF261EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld in Sources */,
+				746DAF1E1EE7714300AC5476 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		746DAF3E1EE7717700AC5476 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				746DAF451EE7717700AC5476 /* JACoreDataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		746DAF491EE7717700AC5476 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 457406BF1D2C113E00E839A3 /* JACoreData */;
+			targetProxy = 746DAF481EE7717700AC5476 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		746DAF211EE7714300AC5476 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				746DAF221EE7714300AC5476 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		746DAF291EE7714300AC5476 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				746DAF2A1EE7714300AC5476 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		457406C61D2C113E00E839A3 /* Debug */ = {
@@ -284,6 +464,66 @@
 			};
 			name = Release;
 		};
+		746DAF381EE7714300AC5476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = JACoreDataSampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataSampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		746DAF391EE7714300AC5476 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = JACoreDataSampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataSampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		746DAF4B1EE7717700AC5476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = JACoreDataTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		746DAF4C1EE7717700AC5476 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = JACoreDataTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -305,7 +545,36 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		746DAF3C1EE7714300AC5476 /* Build configuration list for PBXNativeTarget "JACoreDataSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				746DAF381EE7714300AC5476 /* Debug */,
+				746DAF391EE7714300AC5476 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		746DAF4A1EE7717700AC5476 /* Build configuration list for PBXNativeTarget "JACoreDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				746DAF4B1EE7717700AC5476 /* Debug */,
+				746DAF4C1EE7717700AC5476 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		746DAF241EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				746DAF251EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodel */,
+			);
+			currentVersion = 746DAF251EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodel */;
+			path = JACoreDataSampleApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 457406B71D2C113E00E839A3 /* Project object */;
 }
