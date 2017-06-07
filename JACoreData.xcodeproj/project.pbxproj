@@ -11,14 +11,21 @@
 		457406CE1D2C114D00E839A3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CB1D2C114D00E839A3 /* CoreDataStack.swift */; };
 		457406CF1D2C114D00E839A3 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CC1D2C114D00E839A3 /* ManagedObject.swift */; };
 		457406D01D2C114D00E839A3 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CD1D2C114D00E839A3 /* ManagedObjectContextSettable.swift */; };
+		74401F391EE86F420091174F /* AddStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74401F381EE86F420091174F /* AddStudentViewController.swift */; };
 		746DAF1E1EE7714300AC5476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF1D1EE7714300AC5476 /* AppDelegate.swift */; };
-		746DAF201EE7714300AC5476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF1F1EE7714300AC5476 /* ViewController.swift */; };
+		746DAF201EE7714300AC5476 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF1F1EE7714300AC5476 /* InitialViewController.swift */; };
 		746DAF231EE7714300AC5476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746DAF211EE7714300AC5476 /* Main.storyboard */; };
 		746DAF261EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF241EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld */; };
 		746DAF281EE7714300AC5476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 746DAF271EE7714300AC5476 /* Assets.xcassets */; };
 		746DAF2B1EE7714300AC5476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746DAF291EE7714300AC5476 /* LaunchScreen.storyboard */; };
 		746DAF451EE7717700AC5476 /* JACoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF441EE7717700AC5476 /* JACoreDataTests.swift */; };
 		746DAF471EE7717700AC5476 /* JACoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457406C01D2C113E00E839A3 /* JACoreData.framework */; };
+		746DAF4E1EE7736E00AC5476 /* RootHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF4D1EE7736E00AC5476 /* RootHelper.swift */; };
+		746DAF501EE8561900AC5476 /* JACoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457406C01D2C113E00E839A3 /* JACoreData.framework */; };
+		746DAF511EE8561900AC5476 /* JACoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 457406C01D2C113E00E839A3 /* JACoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		746DAF561EE8589000AC5476 /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF551EE8589000AC5476 /* AddClassViewController.swift */; };
+		746DAF581EE85D5500AC5476 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF571EE85D5500AC5476 /* Student.swift */; };
+		746DAF5A1EE85D5C00AC5476 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF591EE85D5C00AC5476 /* Class.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +36,28 @@
 			remoteGlobalIDString = 457406BF1D2C113E00E839A3;
 			remoteInfo = JACoreData;
 		};
+		746DAF521EE8561900AC5476 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 457406B71D2C113E00E839A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 457406BF1D2C113E00E839A3;
+			remoteInfo = JACoreData;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		746DAF541EE8561900AC5476 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				746DAF511EE8561900AC5476 /* JACoreData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		457406C01D2C113E00E839A3 /* JACoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JACoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,9 +66,10 @@
 		457406CB1D2C114D00E839A3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		457406CC1D2C114D00E839A3 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
 		457406CD1D2C114D00E839A3 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
+		74401F381EE86F420091174F /* AddStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStudentViewController.swift; sourceTree = "<group>"; };
 		746DAF1B1EE7714200AC5476 /* JACoreDataSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JACoreDataSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		746DAF1D1EE7714300AC5476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		746DAF1F1EE7714300AC5476 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		746DAF1F1EE7714300AC5476 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		746DAF221EE7714300AC5476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		746DAF251EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JACoreDataSampleApp.xcdatamodel; sourceTree = "<group>"; };
 		746DAF271EE7714300AC5476 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +78,10 @@
 		746DAF421EE7717700AC5476 /* JACoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JACoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		746DAF441EE7717700AC5476 /* JACoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JACoreDataTests.swift; sourceTree = "<group>"; };
 		746DAF461EE7717700AC5476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		746DAF4D1EE7736E00AC5476 /* RootHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHelper.swift; sourceTree = "<group>"; };
+		746DAF551EE8589000AC5476 /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
+		746DAF571EE85D5500AC5476 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		746DAF591EE85D5C00AC5476 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746DAF501EE8561900AC5476 /* JACoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,12 +147,15 @@
 			isa = PBXGroup;
 			children = (
 				746DAF1D1EE7714300AC5476 /* AppDelegate.swift */,
-				746DAF1F1EE7714300AC5476 /* ViewController.swift */,
+				746DAF1F1EE7714300AC5476 /* InitialViewController.swift */,
+				746DAF551EE8589000AC5476 /* AddClassViewController.swift */,
+				74401F381EE86F420091174F /* AddStudentViewController.swift */,
+				746DAF4D1EE7736E00AC5476 /* RootHelper.swift */,
+				746DAF4F1EE7739E00AC5476 /* Test Models */,
 				746DAF211EE7714300AC5476 /* Main.storyboard */,
 				746DAF271EE7714300AC5476 /* Assets.xcassets */,
 				746DAF291EE7714300AC5476 /* LaunchScreen.storyboard */,
 				746DAF2C1EE7714300AC5476 /* Info.plist */,
-				746DAF241EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld */,
 			);
 			path = JACoreDataSampleApp;
 			sourceTree = "<group>";
@@ -130,6 +167,16 @@
 				746DAF461EE7717700AC5476 /* Info.plist */,
 			);
 			path = JACoreDataTests;
+			sourceTree = "<group>";
+		};
+		746DAF4F1EE7739E00AC5476 /* Test Models */ = {
+			isa = PBXGroup;
+			children = (
+				746DAF241EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld */,
+				746DAF571EE85D5500AC5476 /* Student.swift */,
+				746DAF591EE85D5C00AC5476 /* Class.swift */,
+			);
+			name = "Test Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +218,12 @@
 				746DAF171EE7714200AC5476 /* Sources */,
 				746DAF181EE7714200AC5476 /* Frameworks */,
 				746DAF191EE7714200AC5476 /* Resources */,
+				746DAF541EE8561900AC5476 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				746DAF531EE8561900AC5476 /* PBXTargetDependency */,
 			);
 			name = JACoreDataSampleApp;
 			productName = JACoreDataSampleApp;
@@ -285,9 +334,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746DAF201EE7714300AC5476 /* ViewController.swift in Sources */,
+				74401F391EE86F420091174F /* AddStudentViewController.swift in Sources */,
+				746DAF201EE7714300AC5476 /* InitialViewController.swift in Sources */,
 				746DAF261EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld in Sources */,
 				746DAF1E1EE7714300AC5476 /* AppDelegate.swift in Sources */,
+				746DAF5A1EE85D5C00AC5476 /* Class.swift in Sources */,
+				746DAF581EE85D5500AC5476 /* Student.swift in Sources */,
+				746DAF561EE8589000AC5476 /* AddClassViewController.swift in Sources */,
+				746DAF4E1EE7736E00AC5476 /* RootHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +360,11 @@
 			isa = PBXTargetDependency;
 			target = 457406BF1D2C113E00E839A3 /* JACoreData */;
 			targetProxy = 746DAF481EE7717700AC5476 /* PBXContainerItemProxy */;
+		};
+		746DAF531EE8561900AC5476 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 457406BF1D2C113E00E839A3 /* JACoreData */;
+			targetProxy = 746DAF521EE8561900AC5476 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -467,6 +526,7 @@
 		746DAF381EE7714300AC5476 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -483,6 +543,7 @@
 		746DAF391EE7714300AC5476 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -552,6 +613,7 @@
 				746DAF391EE7714300AC5476 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		746DAF4A1EE7717700AC5476 /* Build configuration list for PBXNativeTarget "JACoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +622,7 @@
 				746DAF4C1EE7717700AC5476 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

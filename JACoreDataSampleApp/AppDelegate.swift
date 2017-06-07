@@ -8,15 +8,21 @@
 
 import UIKit
 import CoreData
+import JACoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var context:NSManagedObjectContext!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let mainContext = createMainContext(modelStoreName: "Model.context", bundles: nil)
+        context = mainContext
+        RootHelper.setRootController(window: window, storyboardName:"Main", viewControllerID: "InitialNavigationController", moc: mainContext)
+        
         return true
     }
 
