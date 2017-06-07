@@ -16,6 +16,8 @@ public class Student: ManagedObject {
     // Relationships
     @NSManaged public private(set) var classes:Set<Class>?
     
+    /// This function create or updates a Student object in the core data stack
+    /// Notice that the context needs to be saved after this method is called.
     public static func insertIntoContext(moc: NSManagedObjectContext, name:String?, age:String?, classes:[Class]?) -> Student? {
         guard let name = name,
             let age = age,
@@ -38,6 +40,7 @@ public class Student: ManagedObject {
     }
 }
 
+// All ManagedObject should adhere to the ManagedObjectType protocol
 extension Student: ManagedObjectType {
     public static var entityName: String {
         return "Student"

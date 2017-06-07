@@ -10,17 +10,51 @@ import UIKit
 import CoreData
 import JACoreData
 
+/// Default landing view controller for app. Holds a list of student objects if any exist. Has links to the AddClass and AddStudent view controllers.
+/// Runs on a NSFetchedResultsController that will automatically update when a student is saved to Core Data
+
 class InitialViewController: UIViewController, ManagedObjectContextSettable {
 
     // Property required in all ManagedObjectContextSettable types. must be set before view controller is initialized
     var managedObjectContext: NSManagedObjectContext!
     
+    // Storyboard Views
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var classLabel: UILabel!
     
-    // MARK: -fetchedResultsController
+    // MARK: - View Controller Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Basic UI setup
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = UIColor.clear
+        
+        // Clear labels
+        configure(for: nil)
+        
+        // Fetch initial data
+        fetch()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Make sure to set the managed object context in prepareForSegue when needed
+        if segue.identifier == "addClassSegue", let classVC = segue.destination as? AddClassViewController {
+            classVC.managedObjectContext = self.managedObjectContext
+        } else if segue.identifier == "addStudentSegue", let studentVC = segue.destination as? AddStudentViewController {
+            studentVC.managedObjectContext = self.managedObjectContext
+        }
+    }
+
+    // MARK: - NSFetchedResultsController Methods
+    
+    // Lazy instantiation for NSFetchedResultsController
     lazy var fetchedResultsController: NSFetchedResultsController<Student> = {
         // Create Fetch Request
         let fetchRequest = NSFetchRequest<Student>(entityName: "Student")
@@ -38,30 +72,6 @@ class InitialViewController: UIViewController, ManagedObjectContextSettable {
         return fetchedResultsController
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Basic UI setup
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = UIColor.clear
-        
-        configure(for: nil)
-        
-        fetch()
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // Make sure to set the managed object context in prepareForSegue when needed
-        if segue.identifier == "addClassSegue", let classVC = segue.destination as? AddClassViewController {
-            classVC.managedObjectContext = self.managedObjectContext
-        } else if segue.identifier == "addStudentSegue", let studentVC = segue.destination as? AddStudentViewController {
-            studentVC.managedObjectContext = self.managedObjectContext
-        }
-    }
-
     func fetch () {
         do {
             try fetchedResultsController.performFetch()
@@ -70,14 +80,18 @@ class InitialViewController: UIViewController, ManagedObjectContextSettable {
         }
     }
     
+    // MARK: - Helpers
+    
     func configure(for student:Student?) {
         guard let student = student else {
+            // If nil, clear all info labels
             nameLabel.text = nil
             ageLabel.text = nil
             classLabel.text = nil
             return
         }
         
+        // Fill in all info labels with currently selected student data
         nameLabel.text = student.name
         ageLabel.text = "\(student.age)"
         var classesString:String?
@@ -92,7 +106,7 @@ class InitialViewController: UIViewController, ManagedObjectContextSettable {
     }
 }
 
-// MARK: - Extensions for TableView
+// MARK: - Extensions for TableView and NSFetchedResultsController
 
 extension InitialViewController: UITableViewDataSource {
     
@@ -118,10 +132,10 @@ extension InitialViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let student = fetchedResultsController.object(at: indexPath)
         configure(for: student)
-
     }
 }
 
+// Basic setup for NSFetchedResultsController for UITableView implementation
 extension InitialViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()

@@ -12,13 +12,14 @@ import JACoreData
 
 // MARK: - Root helper
 class RootHelper{
-    // Set root to a navigation controller. Usually use when login in or login out
+    // Sets the root view controller for the app and assigns the managed object context to it
     class func setRootController(window: UIWindow?, storyboardName: String, viewControllerID: String, moc: NSManagedObjectContext){
         let storyBoard = UIStoryboard(name: storyboardName, bundle: nil)
         window?.rootViewController = storyBoard.instantiateViewController(withIdentifier: viewControllerID)
         setMOCController(window: window, moc: moc)
     }
     
+    // Sets the base controllers "managedObjectContext" variable. If it hits a nav controller it sets its first view controller.
     class func setMOCController(window: UIWindow?, moc: NSManagedObjectContext){
         // Navigations Controller
         if let vc = window?.rootViewController as? ManagedObjectContextSettable { // Controller
