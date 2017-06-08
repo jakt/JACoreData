@@ -8,29 +8,22 @@
 
 import CoreData
 
-open class ManagedObject: NSManagedObject {
-    
-}
-
 public protocol ManagedObjectType: class {
     static var entityName:String {get}
     static var defaultSortDescriptors:[NSSortDescriptor]{get}
 }
 
-
-extension ManagedObjectType {
+extension ManagedObjectType where Self: NSManagedObject {
+    
     public static var defaultSortDescriptors:[NSSortDescriptor] {
         return []
     }
     
-    public static var sortedFetchRequest:NSFetchRequest<NSFetchRequestResult> {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+    public static var sortedFetchRequest:NSFetchRequest<Self> {
+        let request = NSFetchRequest<Self>(entityName: entityName)
         request.sortDescriptors = defaultSortDescriptors
         return request
     }
-}
-
-extension ManagedObjectType where Self: ManagedObject {
     
     public static func findOrCreateInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate, configure: (Self) -> ()) -> Self {
         guard let obj = findOrFetchInContext(moc: moc, matchingPredicate: predicate) else {
@@ -68,6 +61,15 @@ extension ManagedObjectType where Self: ManagedObject {
         let result = try! context.count(for: request)
     
         return result
+    }
+    
+    public static func removeAll(moc: NSManagedObjectContext) {
+        let toRemove = fetchInContext(context: moc)
+        
+        // Loop and delete all object
+        for object in toRemove {
+            moc.delete(object)
+        }
     }
     
     public static func materializedObjectInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self? {

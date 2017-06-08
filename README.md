@@ -1,7 +1,10 @@
 
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat)
+[![Language: Swift 3](https://img.shields.io/badge/language-swift%203-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)
 
-JACoreData is the JAKT internal Core Data library for Swift iOS projects.
+JACoreData is a simple wrapper for Core Data objects in Swift iOS projects.
 
 
 ## Installation
@@ -28,7 +31,8 @@ Run `carthage` to build the framework and drag the built `JACoreData.framework` 
 
 | JACoreData Version | Minimum iOS Target |
 |:--------------------:|:---------------------------:|
-| 1.x | iOS 9 |
+| 3.x | iOS 9 |
+| 4.x | iOS 8 |
 
 ---
 
@@ -38,9 +42,9 @@ Run `carthage` to build the framework and drag the built `JACoreData.framework` 
 
 To create the main context you call `createMainContext(modelStoreName: String, bundles: [NSBundle]?)` This function sets up the Core Data stack and returns the main context.
 
-### Creating ManagedObjects
+### Creating ManagedObjectTypes
 
-Managed objects should be subclassed from `ManagedObject` and should conform to the `ManagedObjectType` protocol. The `ManagedObjectType` protocol requireds the implementation of `entityName` variable. You can also implement the `defaultSortDescriptors` variable if you wish.
+The `ManagedObjectType` protocol can be applied to any `NSManagedObject` and simply requires the settings of the `entityName` variable. You can also optionally implement the `defaultSortDescriptors` variable for easier use with an NSFetchedResultsController.
 
 ```swift 
 extension User: ManagedObjectType {
@@ -56,7 +60,7 @@ extension User: ManagedObjectType {
 
 ### Inserting a Managed Object
 
-Once a `ManagedObject` object conforms to the `ManagedObjectType` protocol inserting it into the the mananged object context is done by simply calling `insertObject()`
+Inserting an object that conforms to the `ManagedObjectType` protocol into the the mananged object context is done by simply calling `insertObject()`
 
 ```swift 
 let moc:NSManagedObjectContext = ...
@@ -65,12 +69,12 @@ let newUser: User = moc.insertObject()
 
 ### Saving Objects
 
-To save changes to the context you can use `saveOrRollback()` but incapsulating the changes in the `performChanges(block:()->())` block is preferred. This function attempt to save all the changes asynchronously. 
+To save changes to the context you can use `saveOrRollback()` but incapsulating the changes in the `performChanges(block:()->())` block is preferred. This function attempts to save all the changes asynchronously and if the command fails, will rollback the changes.
 
 
 ### Fetching Objects
 
-To fetch a single `ManagedObject` object that conforms to the `ManagedObjectType` protocol, use `findOrFetchInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self?`
+To fetch a single `NSManagedObject` object that conforms to the `ManagedObjectType` protocol, use `findOrFetchInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self?`
 
 You can also use `findOrCreateInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate, configure: Self -> ()) -> Self` to find or create an object if it doesn't exist.
 
