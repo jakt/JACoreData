@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		457406C41D2C113E00E839A3 /* JACoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 457406C31D2C113E00E839A3 /* JACoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		457406CE1D2C114D00E839A3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CB1D2C114D00E839A3 /* CoreDataStack.swift */; };
-		457406CF1D2C114D00E839A3 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CC1D2C114D00E839A3 /* ManagedObject.swift */; };
+		457406CF1D2C114D00E839A3 /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CC1D2C114D00E839A3 /* ManagedObjectType.swift */; };
 		457406D01D2C114D00E839A3 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457406CD1D2C114D00E839A3 /* ManagedObjectContextSettable.swift */; };
 		74401F391EE86F420091174F /* AddStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74401F381EE86F420091174F /* AddStudentViewController.swift */; };
 		746DAF1E1EE7714300AC5476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF1D1EE7714300AC5476 /* AppDelegate.swift */; };
@@ -18,7 +18,6 @@
 		746DAF261EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF241EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld */; };
 		746DAF281EE7714300AC5476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 746DAF271EE7714300AC5476 /* Assets.xcassets */; };
 		746DAF2B1EE7714300AC5476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746DAF291EE7714300AC5476 /* LaunchScreen.storyboard */; };
-		746DAF451EE7717700AC5476 /* JACoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF441EE7717700AC5476 /* JACoreDataTests.swift */; };
 		746DAF471EE7717700AC5476 /* JACoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457406C01D2C113E00E839A3 /* JACoreData.framework */; };
 		746DAF4E1EE7736E00AC5476 /* RootHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF4D1EE7736E00AC5476 /* RootHelper.swift */; };
 		746DAF501EE8561900AC5476 /* JACoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457406C01D2C113E00E839A3 /* JACoreData.framework */; };
@@ -26,6 +25,11 @@
 		746DAF561EE8589000AC5476 /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF551EE8589000AC5476 /* AddClassViewController.swift */; };
 		746DAF581EE85D5500AC5476 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF571EE85D5500AC5476 /* Student.swift */; };
 		746DAF5A1EE85D5C00AC5476 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF591EE85D5C00AC5476 /* Class.swift */; };
+		74908A8F1EE89D4500EAB29D /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF591EE85D5C00AC5476 /* Class.swift */; };
+		74908A901EE89D5B00EAB29D /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF571EE85D5500AC5476 /* Student.swift */; };
+		74908A911EE89D6100EAB29D /* JACoreDataSampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 746DAF241EE7714300AC5476 /* JACoreDataSampleApp.xcdatamodeld */; };
+		74908AA31EE8AF1A00EAB29D /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74908AA21EE8AF1A00EAB29D /* CoreDataStackTests.swift */; };
+		74908AAB1EE8B2D200EAB29D /* ManagedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74908AAA1EE8B2D200EAB29D /* ManagedObjectTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 457406BF1D2C113E00E839A3;
 			remoteInfo = JACoreData;
+		};
+		74908AA51EE8AF1A00EAB29D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 457406B71D2C113E00E839A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 746DAF1A1EE7714200AC5476;
+			remoteInfo = JACoreDataSampleApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -64,7 +75,7 @@
 		457406C31D2C113E00E839A3 /* JACoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACoreData.h; sourceTree = "<group>"; };
 		457406C51D2C113E00E839A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		457406CB1D2C114D00E839A3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		457406CC1D2C114D00E839A3 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
+		457406CC1D2C114D00E839A3 /* ManagedObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectType.swift; sourceTree = "<group>"; };
 		457406CD1D2C114D00E839A3 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		74401F381EE86F420091174F /* AddStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStudentViewController.swift; sourceTree = "<group>"; };
 		746DAF1B1EE7714200AC5476 /* JACoreDataSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JACoreDataSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,12 +87,14 @@
 		746DAF2A1EE7714300AC5476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		746DAF2C1EE7714300AC5476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		746DAF421EE7717700AC5476 /* JACoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JACoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		746DAF441EE7717700AC5476 /* JACoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JACoreDataTests.swift; sourceTree = "<group>"; };
-		746DAF461EE7717700AC5476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		746DAF4D1EE7736E00AC5476 /* RootHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHelper.swift; sourceTree = "<group>"; };
 		746DAF551EE8589000AC5476 /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 		746DAF571EE85D5500AC5476 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		746DAF591EE85D5C00AC5476 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		74908AA01EE8AF1A00EAB29D /* JACoreDataSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JACoreDataSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74908AA21EE8AF1A00EAB29D /* CoreDataStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
+		74908AA41EE8AF1A00EAB29D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74908AAA1EE8B2D200EAB29D /* ManagedObjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +121,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		74908A9D1EE8AF1A00EAB29D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,7 +136,7 @@
 			children = (
 				457406C21D2C113E00E839A3 /* JACoreData */,
 				746DAF1C1EE7714300AC5476 /* JACoreDataSampleApp */,
-				746DAF431EE7717700AC5476 /* JACoreDataTests */,
+				74908AA11EE8AF1A00EAB29D /* JACoreDataSampleAppTests */,
 				457406C11D2C113E00E839A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,6 +147,7 @@
 				457406C01D2C113E00E839A3 /* JACoreData.framework */,
 				746DAF1B1EE7714200AC5476 /* JACoreDataSampleApp.app */,
 				746DAF421EE7717700AC5476 /* JACoreDataTests.xctest */,
+				74908AA01EE8AF1A00EAB29D /* JACoreDataSampleAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,7 +158,7 @@
 				457406C31D2C113E00E839A3 /* JACoreData.h */,
 				457406C51D2C113E00E839A3 /* Info.plist */,
 				457406CB1D2C114D00E839A3 /* CoreDataStack.swift */,
-				457406CC1D2C114D00E839A3 /* ManagedObject.swift */,
+				457406CC1D2C114D00E839A3 /* ManagedObjectType.swift */,
 				457406CD1D2C114D00E839A3 /* ManagedObjectContextSettable.swift */,
 			);
 			path = JACoreData;
@@ -160,15 +181,6 @@
 			path = JACoreDataSampleApp;
 			sourceTree = "<group>";
 		};
-		746DAF431EE7717700AC5476 /* JACoreDataTests */ = {
-			isa = PBXGroup;
-			children = (
-				746DAF441EE7717700AC5476 /* JACoreDataTests.swift */,
-				746DAF461EE7717700AC5476 /* Info.plist */,
-			);
-			path = JACoreDataTests;
-			sourceTree = "<group>";
-		};
 		746DAF4F1EE7739E00AC5476 /* Test Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +189,16 @@
 				746DAF591EE85D5C00AC5476 /* Class.swift */,
 			);
 			name = "Test Models";
+			sourceTree = "<group>";
+		};
+		74908AA11EE8AF1A00EAB29D /* JACoreDataSampleAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				74908AAA1EE8B2D200EAB29D /* ManagedObjectTests.swift */,
+				74908AA21EE8AF1A00EAB29D /* CoreDataStackTests.swift */,
+				74908AA41EE8AF1A00EAB29D /* Info.plist */,
+			);
+			path = JACoreDataSampleAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +270,24 @@
 			productReference = 746DAF421EE7717700AC5476 /* JACoreDataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		74908A9F1EE8AF1A00EAB29D /* JACoreDataSampleAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74908AA71EE8AF1A00EAB29D /* Build configuration list for PBXNativeTarget "JACoreDataSampleAppTests" */;
+			buildPhases = (
+				74908A9C1EE8AF1A00EAB29D /* Sources */,
+				74908A9D1EE8AF1A00EAB29D /* Frameworks */,
+				74908A9E1EE8AF1A00EAB29D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74908AA61EE8AF1A00EAB29D /* PBXTargetDependency */,
+			);
+			name = JACoreDataSampleAppTests;
+			productName = JACoreDataSampleAppTests;
+			productReference = 74908AA01EE8AF1A00EAB29D /* JACoreDataSampleAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -270,6 +310,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
+					74908A9F1EE8AF1A00EAB29D = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 746DAF1A1EE7714200AC5476;
+					};
 				};
 			};
 			buildConfigurationList = 457406BA1D2C113E00E839A3 /* Build configuration list for PBXProject "JACoreData" */;
@@ -288,6 +333,7 @@
 				457406BF1D2C113E00E839A3 /* JACoreData */,
 				746DAF1A1EE7714200AC5476 /* JACoreDataSampleApp */,
 				746DAF411EE7717700AC5476 /* JACoreDataTests */,
+				74908A9F1EE8AF1A00EAB29D /* JACoreDataSampleAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -317,6 +363,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		74908A9E1EE8AF1A00EAB29D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -324,7 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				457406CF1D2C114D00E839A3 /* ManagedObject.swift in Sources */,
+				457406CF1D2C114D00E839A3 /* ManagedObjectType.swift in Sources */,
 				457406D01D2C114D00E839A3 /* ManagedObjectContextSettable.swift in Sources */,
 				457406CE1D2C114D00E839A3 /* CoreDataStack.swift in Sources */,
 			);
@@ -349,7 +402,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746DAF451EE7717700AC5476 /* JACoreDataTests.swift in Sources */,
+				74908A8F1EE89D4500EAB29D /* Class.swift in Sources */,
+				74908A901EE89D5B00EAB29D /* Student.swift in Sources */,
+				74908A911EE89D6100EAB29D /* JACoreDataSampleApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74908A9C1EE8AF1A00EAB29D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74908AAB1EE8B2D200EAB29D /* ManagedObjectTests.swift in Sources */,
+				74908AA31EE8AF1A00EAB29D /* CoreDataStackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +429,11 @@
 			isa = PBXTargetDependency;
 			target = 457406BF1D2C113E00E839A3 /* JACoreData */;
 			targetProxy = 746DAF521EE8561900AC5476 /* PBXContainerItemProxy */;
+		};
+		74908AA61EE8AF1A00EAB29D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 746DAF1A1EE7714200AC5476 /* JACoreDataSampleApp */;
+			targetProxy = 74908AA51EE8AF1A00EAB29D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -495,6 +564,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JACoreData/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakt.JACoreData.JACoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,6 +585,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JACoreData/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakt.JACoreData.JACoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -531,7 +602,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = JACoreDataSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,7 +619,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = JACoreDataSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,6 +653,39 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		74908AA81EE8AF1A00EAB29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = JACoreDataSampleAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataSampleAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JACoreDataSampleApp.app/JACoreDataSampleApp";
+			};
+			name = Debug;
+		};
+		74908AA91EE8AF1A00EAB29D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = JACoreDataSampleAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JAKT.JACoreDataSampleAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JACoreDataSampleApp.app/JACoreDataSampleApp";
 			};
 			name = Release;
 		};
@@ -620,6 +724,15 @@
 			buildConfigurations = (
 				746DAF4B1EE7717700AC5476 /* Debug */,
 				746DAF4C1EE7717700AC5476 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74908AA71EE8AF1A00EAB29D /* Build configuration list for PBXNativeTarget "JACoreDataSampleAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74908AA81EE8AF1A00EAB29D /* Debug */,
+				74908AA91EE8AF1A00EAB29D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

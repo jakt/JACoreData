@@ -57,12 +57,8 @@ class InitialViewController: UIViewController, ManagedObjectContextSettable {
     // Lazy instantiation for NSFetchedResultsController
     lazy var fetchedResultsController: NSFetchedResultsController<Student> = {
         // Create Fetch Request
-        let fetchRequest = NSFetchRequest<Student>(entityName: "Student")
-        
-        // Configure Sort Descriptors
-        let sortDescriptors = Student.defaultSortDescriptors
-        fetchRequest.sortDescriptors = sortDescriptors
-        
+        let fetchRequest = Student.sortedFetchRequest
+            
         // Create Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         

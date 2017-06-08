@@ -9,7 +9,6 @@
 import CoreData
 import UIKit
 
-
 public func createMainContext(modelStoreName:String, bundles:[Bundle]?) -> NSManagedObjectContext {
     let storeURL = URL.documentsURL.appendingPathComponent(modelStoreName)
     
@@ -65,7 +64,7 @@ extension URL {
 }
 
 extension NSManagedObjectContext {
-    public func insertObject<A:ManagedObject>() -> A where A:ManagedObjectType {
+    public func insertObject<A:NSManagedObject>() -> A where A:ManagedObjectType {
         guard let obj = NSEntityDescription.insertNewObject(forEntityName: A.entityName, into: self) as? A else {fatalError("wrong object type - Type should be \(A.entityName))")}
         return obj
     }

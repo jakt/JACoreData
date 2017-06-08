@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import JACoreData
 
-public class Class: ManagedObject {
+public class Class: NSManagedObject {
     @NSManaged public private(set) var name:String
     @NSManaged public private(set) var professor:String?
     // Relationships
