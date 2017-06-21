@@ -22,7 +22,7 @@ $ brew install carthage
 To integrate JACoreData into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-git "git@github.com:jakt/JACoreData.git" ~> 1.0
+github "jakt/JACoreData.git"
 ```
 
 Run `carthage` to build the framework and drag the built `JACoreData.framework` into your Xcode project.
