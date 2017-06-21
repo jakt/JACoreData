@@ -31,8 +31,8 @@ Run `carthage` to build the framework and drag the built `JACoreData.framework` 
 
 | JACoreData Version | Minimum iOS Target |
 |:--------------------:|:---------------------------:|
-| 3.x | iOS 9 |
-| 4.x | iOS 8 |
+| 0.x | iOS 9 |
+| 1.x | iOS 8 |
 
 ---
 
