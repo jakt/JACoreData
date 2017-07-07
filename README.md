@@ -60,7 +60,7 @@ To fetch more than one object, use `fetchInContext(context: NSManagedObjectConte
 
 ### Inserting a Managed Object
 
-Inserting into the the mananged object context is done by simply calling `insertObject()`. Sometimes when inserting new data you may not know whether the object has been saved before. For these situations use `findOrCreateInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate, configure: Self -> ()) -> Self`. This acts very similarly to `findOrFetchInContext` but will create an object if no object is found in the database to match the given predicate.
+Inserting into the mananged object context is done by simply calling `insertObject()`. Sometimes, when inserting new data, you may not know whether the object has been saved before. For these situations, use `findOrCreateInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate, configure: Self -> ()) -> Self`. This acts very similarly to `findOrFetchInContext` but will create an object if no object is found in the database to match the given predicate.
 
 ```swift 
 let moc:NSManagedObjectContext = ...
@@ -78,10 +78,10 @@ let newOrExistingPost = Post.findOrCreateInContext(moc: moc, matchingPredicate: 
 
 ### Saving Objects
 
-Once all changes have been made you can save the context by calling `saveOrRollback()`. This function attempts to save all the changes but if the command fails, will rollback the changes. To perform a specific set of changes to be saved to the context right away `performChanges(block:()->())` is perferred. Here, all of your changes are wrapped in a single block and after they're performed the context is saved.
+Once all changes have been made, you can save the context by calling `saveOrRollback()`. This function attempts to save all the changes, but if the command fails, it will rollback the changes. To perform a specific set of changes to be saved to the context right away, `performChanges(block:()->())` is preferred. Here, all of your changes are wrapped in a single block. After they're performed the context is saved.
 
 
-### Creating the main context
+### Creating the Main Context
 
-To create the main context you call `createMainContext(modelStoreName: String, bundles: [NSBundle]?)` This function sets up the Core Data stack and returns the main context. This would typically be called in the `AppDelegate` and then passed into the landing view controller.
+To create the main context, you call `createMainContext(modelStoreName: String, bundles: [NSBundle]?)`. This function sets up the Core Data stack and returns the main context. This would typically be called in the `AppDelegate` and then passed into the landing view controller.
 
