@@ -4,8 +4,7 @@
 [![Language: Swift 3](https://img.shields.io/badge/language-swift%203-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 ![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)
 
-JACoreData is a simple wrapper for Core Data objects in Swift iOS projects.
-
+JACoreData is a simple wrapper for Core Data objects in swift iOS projects. While fairly lightweight, this library makes fetching, creating, and saving NSManagedObjects easier and cleaner. Simply conform your already laid out `NSManagedObject` files to the `ManagedObjectType` protocol in JACoreData and you instantly gain access to multiple convenience methods.
 
 ## Installation
 JACoreData is designed to be installed using Carthage.
@@ -38,13 +37,9 @@ Run `carthage` to build the framework and drag the built `JACoreData.framework` 
 
 ## Usage
 
-### Creating the main context
-
-To create the main context you call `createMainContext(modelStoreName: String, bundles: [NSBundle]?)` This function sets up the Core Data stack and returns the main context.
-
 ### Creating ManagedObjectTypes
 
-The `ManagedObjectType` protocol can be applied to any `NSManagedObject` and simply requires the settings of the `entityName` variable. You can also optionally implement the `defaultSortDescriptors` variable for easier use with an NSFetchedResultsController.
+The `ManagedObjectType` protocol can be applied to any `NSManagedObject` and simply requires the setting of the `entityName` variable. You can also optionally implement the `defaultSortDescriptors` variable for easier use with an NSFetchedResultsController.
 
 ```swift 
 extension User: ManagedObjectType {
@@ -57,28 +52,36 @@ extension User: ManagedObjectType {
     }
 }
 ```
+### Fetching Objects
+
+To fetch a single `NSManagedObject` object that conforms to the `ManagedObjectType` protocol, use `findOrFetchInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self?`. This will return nil if no object in the database matches the given predicate.
+
+To fetch more than one object, use `fetchInContext(context: NSManagedObjectContext, configurationBlock: NSFetchRequest -> () = { _ in }) -> [Self]`.
 
 ### Inserting a Managed Object
 
-Inserting an object that conforms to the `ManagedObjectType` protocol into the the mananged object context is done by simply calling `insertObject()`.
+Inserting into the the mananged object context is done by simply calling `insertObject()`. Sometimes when inserting new data you may not know whether the object has been saved before. For these situations use `findOrCreateInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate, configure: Self -> ()) -> Self`. This acts very similarly to `findOrFetchInContext` but will create an object if no object is found in the database to match the given predicate.
 
 ```swift 
 let moc:NSManagedObjectContext = ...
-let newUser: User = moc.insertObject()
+
+// Insert directly
+let newPost: Post = moc.insertObject()
+
+// Insert when object may already exist in the database
+let predicate = NSPredicate(format: "id == %@", "3003")
+let newOrExistingPost = Post.findOrCreateInContext(moc: moc, matchingPredicate: predicate) { (editableObj) in
+    // Configure the editableObj here...
+}
+
 ```
 
 ### Saving Objects
 
-To save changes to the context you can use `saveOrRollback()` but incapsulating the changes in the `performChanges(block:()->())` block is preferred. This function attempts to save all the changes asynchronously and if the command fails, will rollback the changes.
+Once all changes have been made you can save the context by calling `saveOrRollback()`. This function attempts to save all the changes but if the command fails, will rollback the changes. To perform a specific set of changes to be saved to the context right away `performChanges(block:()->())` is perferred. Here, all of your changes are wrapped in a single block and after they're performed the context is saved.
 
 
-### Fetching Objects
+### Creating the main context
 
-To fetch a single `NSManagedObject` object that conforms to the `ManagedObjectType` protocol, use `findOrFetchInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self?`.
-
-You can also use `findOrCreateInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate, configure: Self -> ()) -> Self` to find or create an object if it doesn't exist.
-
-To fetch more than one object, use `fetchInContext(context: NSManagedObjectContext, @noescape configurationBlock: NSFetchRequest -> () = { _ in }) -> [Self]`.
-
-
+To create the main context you call `createMainContext(modelStoreName: String, bundles: [NSBundle]?)` This function sets up the Core Data stack and returns the main context. This would typically be called in the `AppDelegate` and then passed into the landing view controller.
 
