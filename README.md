@@ -8,7 +8,7 @@ JACoreData is a simple wrapper for Core Data objects in Swift iOS projects.
 
 
 ## Installation
-JACoreData is designed to be installed using Carthage
+JACoreData is designed to be installed using Carthage.
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
@@ -60,7 +60,7 @@ extension User: ManagedObjectType {
 
 ### Inserting a Managed Object
 
-Inserting an object that conforms to the `ManagedObjectType` protocol into the the mananged object context is done by simply calling `insertObject()`
+Inserting an object that conforms to the `ManagedObjectType` protocol into the the mananged object context is done by simply calling `insertObject()`.
 
 ```swift 
 let moc:NSManagedObjectContext = ...
@@ -74,11 +74,11 @@ To save changes to the context you can use `saveOrRollback()` but incapsulating 
 
 ### Fetching Objects
 
-To fetch a single `NSManagedObject` object that conforms to the `ManagedObjectType` protocol, use `findOrFetchInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self?`
+To fetch a single `NSManagedObject` object that conforms to the `ManagedObjectType` protocol, use `findOrFetchInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self?`.
 
 You can also use `findOrCreateInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate, configure: Self -> ()) -> Self` to find or create an object if it doesn't exist.
 
-To fetch more than one object, use `fetchInContext(context: NSManagedObjectContext, @noescape configurationBlock: NSFetchRequest -> () = { _ in }) -> [Self]`
+To fetch more than one object, use `fetchInContext(context: NSManagedObjectContext, @noescape configurationBlock: NSFetchRequest -> () = { _ in }) -> [Self]`.
 
 
 
